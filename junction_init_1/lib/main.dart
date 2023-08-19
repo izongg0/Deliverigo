@@ -5,6 +5,11 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_webservice/places.dart';
 import 'package:junction_init_1/current_location.dart';
 
+import 'Calculate.dart';
+import 'EnterCalorie.dart';
+import 'Loading.dart';
+import 'Result.dart';
+import 'SecondLoading.dart';
 import 'location_search.dart';
 
 void main() async {
@@ -20,9 +25,15 @@ class MainApp extends StatelessWidget {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/current',
+      initialRoute: '/',
       routes: {
+        '/': (context) => Loading(),
+
+        '/a': (context) => SecondLoading(),
         '/current': (context) => CurrentLocation(),
+        // '/e': (context) => EnterCalorie(),
+        // '/f': (context) => Calculate(),
+        // '/g': (context) => Result(),
       },
     );
   }
